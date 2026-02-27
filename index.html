@@ -1,139 +1,180 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <!-- Tailwind -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- FontAwesome -->
+    <title>Maxime Desmet Vanden Stock</title>
+    <link rel="icon" type="image/x-icon" href="favicon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=DM+Mono:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
-      integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
       crossorigin="anonymous"
     />
     <style>
-      html {
-        scroll-behavior: smooth;
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
       }
+
       body {
-        font-family: Georgia, "Times New Roman", Times, serif;
-        background-color: #ffffff;
-        background-image: linear-gradient(#80808080 2px, transparent 0),
-          linear-gradient(90deg, #80808080 2px, transparent 0),
-          linear-gradient(#80808080 1px, transparent 0),
-          linear-gradient(90deg, #80808080 1px, #ffffff 1px);
-        background-size: 50px 50px, 50px 50px, 10px 10px, 10px 10px;
-        background-position: -2px -2px, -2px -2px, -1px -1px, -1px -1px;
+        font-family: "DM Mono", monospace;
+        background-color: #cf8e72;
+        color: #1a1008;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 2rem;
       }
+
+      .card {
+        background-color: #efe5d4;
+        padding: 2.5rem;
+      }
+
       main {
-        background-image: url("psy.png");
+        max-width: 620px;
+        width: 100%;
       }
-      .shadow-light {
-        box-shadow: 4px 4px 0px 0px #000000;
+
+      .header {
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+        margin-bottom: 1.25rem;
+      }
+
+      .photo {
+        width: 96px;
+        height: 96px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 2px solid #1a1008;
+        flex-shrink: 0;
+      }
+
+      h1 {
+        font-family: "EB Garamond", serif;
+        font-weight: 500;
+        font-size: 2.6rem;
+        line-height: 1.1;
+        letter-spacing: -0.01em;
+      }
+
+      .details {
+        font-size: 0.9rem;
+        line-height: 1.9;
+        color: #6b5845;
+      }
+
+      .details a {
+        color: inherit;
+        text-underline-offset: 3px;
+        transition: color 0.2s;
+      }
+
+      .details a.link-breev {
+        text-decoration-color: #9b8ec4;
+      }
+      .details a.link-breev:hover {
+        color: #9b8ec4;
+      }
+
+      .details a.link-osu {
+        text-decoration-color: #d73f09;
+      }
+      .details a.link-osu:hover {
+        color: #d73f09;
+      }
+
+      .divider {
+        border: none;
+        border-top: 1px solid #b89a82;
+        margin: 1.5rem 0;
+      }
+
+      .links {
+        display: flex;
+        gap: 1.1rem;
+        align-items: center;
+        flex-wrap: wrap;
+        font-size: 0.9rem;
+      }
+
+      .links a {
+        color: #1a1008;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        gap: 0.4rem;
+        transition: color 0.2s;
+      }
+
+      .links a:hover {
+        color: #4a6fa5;
+      }
+
+      @media (max-width: 480px) {
+        .header {
+          gap: 1rem;
+        }
+
+        .photo {
+          width: 72px;
+          height: 72px;
+        }
+
+        h1 {
+          font-size: 1.9rem;
+        }
       }
     </style>
-
-    <title>Maxime Desmet Vanden Stock</title>
-    <link rel="icon" type="image/x-icon" href="favicon.png" />
   </head>
   <body>
-    <main
-      class="flex flex-col flex-grow items-center justify-center gap-10 min-h-screen p-4"
-    >
-      <div
-        id="main-box"
-        class="bg-white p-8 max-w-2xl w-full border-2 border-black rounded-lg shadow-light"
-      >
-        <div class="flex items-center gap-5 flex-wrap-reverse justify-center">
-          <img
-            class="border-2 border-black rounded-full w-32 h-32"
-            src="face.jpg"
-            alt="pfp"
-          />
-          <div class="w-full text-center md:text-left md:w-auto">
-            <h4 class="text-2xl font-bold">Maxime Desmet Vanden Stock</h4>
-            <div
-              class="flex flex-col justify-between md:flex-row md:items-center md:gap-2"
-            >
-              <p class="text-lg text-neutral-600 font-light">
-                Software Engineer
-              </p>
-              <p class="text-lg text-neutral-600 font-light">
-                <i class="text-red-500 fas fa-map-marker-alt"></i> Brussels,
-                Belgium
-              </p>
-            </div>
-          </div>
+    <main>
+      <div class="card">
+        <div class="header">
+          <img class="photo" src="face.jpg" alt="Maxime Desmet Vanden Stock" />
+          <h1>Maxime Desmet<br />Vanden Stock</h1>
         </div>
-
-        <div class="mt-8 p-2 py-4 border-y-2 border-dotted border-black">
-          <p class="font-semibold">Hey there! Here's some facts about me:</p>
-          <p class="mt-4">
-            I'm a programmer and tech wizard who's all about Machine Learning
-            and AI.
+        <div class="details">
+          <p>
+            Software Engineer at
+            <a class="link-breev" href="https://breev.eu" target="_blank"
+              >Breev</a
+            >
           </p>
-          <p class="mt-4">
-            I'm currently rocking it as a Junior Software Developper at
-            <a
-              class="font-semibold text-yellow-600 hover:underline"
-              href="https://easypost.eu"
-              target="_blank"
-              >Easypost Belgium</a
-            >, where I turn boring old document flows into slick, automated
-            processes.
-          </p>
-          <p class="mt-4">
-            I graduated in 2023 from
-            <a
-              class="font-semibold text-orange-600 hover:underline"
-              href="https://oregonstate.edu"
-              target="_blank"
+          <p>
+            B.S. Computer Science,
+            <a class="link-osu" href="https://oregonstate.edu" target="_blank"
               >Oregon State University</a
             >
-            with a B.S. in Computer Science.
           </p>
-          <p class="mt-4">
-            Feel free to connect! Who knows, we might just end up building the
-            next big thing together. 🚀
+          <p>
+            ML/AI Specialist &middot; AWS Certified &middot; Brussels, Belgium
           </p>
         </div>
-
-        <div class="mt-8 flex flex-wrap justify-between p-2 items-center gap-5">
-          <a href="resume.pdf" download="maxime-dvds_resume.pdf"
-            ><button
-              class="bg-orange-400 text-white font-medium p-2 border-2 border-black rounded shadow-light hover:shadow-none hover:translate-x-1 hove:translate-y-1 transition"
-            >
-              Download Resume
-            </button></a
+        <hr class="divider" />
+        <div class="links">
+          <a href="https://github.com/croquant" target="_blank"
+            ><i class="fab fa-github"></i> GitHub</a
           >
-          <div class="flex gap-2 text-xl">
-            <a
-              class="bg-slate-700 text-white p-2 h-10 w-10 flex items-center justify-center border-2 border-black rounded shadow-light hover:shadow-none hover:translate-x-1 hover:translate-y-1 transition"
-              href="https://github.com/croquant"
-              target="_blank"
-              ><i class="fab fa-github"></i
-            ></a>
-            <a
-              class="bg-blue-500 text-white p-2 h-10 w-10 flex items-center justify-center border-2 border-black rounded shadow-light hover:shadow-none hover:translate-x-1 hover:translate-y-1 transition"
-              href="https://www.linkedin.com/in/mdvds/"
-              target="_blank"
-              ><i class="fab fa-linkedin"></i
-            ></a>
-            <a
-              class="bg-pink-500 text-white p-2 h-10 w-10 flex items-center justify-center border-2 border-black rounded shadow-light hover:shadow-none hover:translate-x-1 hover:translate-y-1 transition"
-              href="https://www.instagram.com/maxdesmetvds/"
-              target="_blank"
-              ><i class="fab fa-instagram"></i
-            ></a>
-            <a
-              class="bg-slate-100 p-2 h-10 w-10 flex items-center justify-center border-2 border-black rounded shadow-light hover:shadow-none hover:translate-x-1 hover:translate-y-1 transition"
-              href="mailto:desmet@max1.me"
-              target="_blank"
-              ><i class="fas fa-at"></i
-            ></a>
-          </div>
+          <a href="https://www.linkedin.com/in/mdvds/" target="_blank"
+            ><i class="fab fa-linkedin"></i> LinkedIn</a
+          >
+          <a href="mailto:desmet@max1.me"
+            ><i class="fas fa-envelope"></i> Email</a
+          >
+          <a href="resume.pdf" download="maxime-dvds_resume.pdf"
+            ><i class="fas fa-file-alt"></i> Resume</a
+          >
         </div>
       </div>
     </main>
